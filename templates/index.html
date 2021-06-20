@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+	<title>Home</title>
+
+	<style>
+		body {
+	margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #161616;
+    color: white;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	padding-top: 5vw;
+	color: #54dcf2;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	background: #232d2f;
+	
+	width: 350px;
+	border-radius: 18px;
+    padding: 2rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+.form-input {
+    border-radius: 10px;
+    border: none;
+    background-color: #161616;
+    color: white;
+    text-align: left;
+    width: 90%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+.form-input::placeholder {
+    color: white;
+}
+.form-input:focus {
+    background-color: white;
+    color: black;
+    outline: none;
+}
+.btn {
+
+    font-family: 'Montserrat', sans-serif;
+    background-color: #54dcf2;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-weight: 700;
+    
+}
+.btn:focus {
+    border: none;
+    background-color: #fa788d;
+    outline: none;
+}
+
+.btn:hover {
+    border: none;
+    background-color: #fa788d;
+}
+
+footer {
+    background-color: #54dcf2;
+    position: absolute;
+    width: 100%;
+    height:50px;
+    margin-top: 63.5rem;
+    
+}
+.footer {
+    margin:2rem 1rem;
+    text-align: center;
+}
+.footer-text p {
+    color: #161616;
+    opacity: 1;
+    text-align: center;
+    margin: 1rem;
+    font-size: 12pt;
+}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="head">
+			<h1>Personality Prediction</h1>
+		</div>
+		<div class="container">
+			<form method="POST" action="/predict">
+				<input type="text" name="username" placeholder="Enter a Twitter handle" class="form-input">
+				<input type="submit" class="btn">
+			</form>
+			
+		</div>
+		<div>
+		<br><br><h3 align="center">{{ personality }}</h3>
+		</div>
+		<footer>
+			<div class="footer-text">
+				<p>Copyright © 2020 Twitter personality predictor 
+                    
+                    - Design: <a rel="nofollow" href="" target="_parent">Pragya</a></p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
